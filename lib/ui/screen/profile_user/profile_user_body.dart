@@ -1,4 +1,5 @@
 import 'package:app_hen_ho/ui/screen/profile_user/profile_user_img.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BodyProfileUser extends StatefulWidget {
@@ -237,7 +238,9 @@ class _BodyProfileUserState extends State<BodyProfileUser> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10), border: Border.all()),
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                showDialogLanguage(context);
+              },
               child: Row(
                 children: const [
                   Text(
@@ -262,7 +265,9 @@ class _BodyProfileUserState extends State<BodyProfileUser> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10), border: Border.all()),
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                showDialogShowme(context);
+              },
               child: Row(
                 children: const [
                   Text(
@@ -429,9 +434,46 @@ class _BodyProfileUserState extends State<BodyProfileUser> {
               ),
             ),
           ),
-          const SizedBox(height: 20,)
+          const SizedBox(
+            height: 20,
+          )
         ],
       ),
     );
+  }
+
+  void showDialogLanguage(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return CupertinoAlertDialog(
+            title: const Text("Language"),
+            actions: [
+              CupertinoDialogAction(
+                  onPressed: () {}, child: const Text("America")),
+              CupertinoDialogAction(
+                  onPressed: () {}, child: const Text("English")),
+              CupertinoDialogAction(
+                  onPressed: () {}, child: const Text("Viet Nam")),
+            ],
+          );
+        });
+  }
+
+  void showDialogShowme(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return CupertinoAlertDialog(
+            title: const Text("Show me"),
+            actions: [
+              CupertinoDialogAction(onPressed: () {}, child: const Text("Men")),
+              CupertinoDialogAction(
+                  onPressed: () {}, child: const Text("Women")),
+              CupertinoDialogAction(
+                  onPressed: () {}, child: const Text("Other Genders")),
+            ],
+          );
+        });
   }
 }
