@@ -31,7 +31,7 @@ class ProfileUserPic extends StatelessWidget {
                     width: 46,
                     child: ClipOval(
                       child: Icon(
-                        Icons.draw,
+                        Icons.edit,
                         color: Colors.white,
                         size: 30,
                       ),
